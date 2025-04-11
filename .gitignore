@@ -1,0 +1,6 @@
+# do not store data in repo
+volumes/
+ktem_app_data/
+
+# store the .env for now as it is only for test/dev
+# env
