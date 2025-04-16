@@ -11,7 +11,7 @@ docker compose for all services.
 run with:  
 ` docker compose -f 'docker_compose.yml' up `
 
-default url are:
+default url are:chmo
 - keycloack: http://localhost:8080
 - mattermost: http://localhost:8065
 - kotaemon: http://localhost:7860
@@ -33,3 +33,8 @@ User admin created (for test/dev only !):
 - https://github.com/Cinnamon/kotaemon
 - https://docs.mattermost.com/deploy/server/deploy-containers.html
 - https://moodledev.io/general/app/development/setup/docker-images
+
+
+Keycloack + mattermost
+- https://www.keycloak.org/securing-apps/oidc-layers
+- https://docs.mattermost.com/onboard/sso-openidconnect.html
