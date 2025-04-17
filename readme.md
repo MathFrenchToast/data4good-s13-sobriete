@@ -3,8 +3,18 @@
 ## how to run-it
 
 On a linux box or in wsl2 on windows,  
-clone this repo,  
-prepare mattermost folder:  
+
+
+clone this repo.
+
+In order to have docker compose internal name resolution and local browser to share the same name resolution on this services,
+add this to your hosts.file:
+```
+127.0.0.1  keycloak
+127.0.0.1  mattermost
+```
+  
+prepare mattermost local folder:  
 ```
 mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
 sudo chown -R 2000:2000 ./volumes/app/mattermost
@@ -17,7 +27,9 @@ In keycloak, import the test realm: go to 'manage realms' > 'create realms' and 
 then go to 'Clients' > KCmattermost01 > 'credentials'  
 and copy the client secret
 
-In mattermost, create your admin account and in Console Settings, create yout OpenId config with the following values:
+In mattermost, 
+activate a free trial (OpenID is only in pro and team version).  
+create your admin account and in Console Settings, create yout OpenId config with the following values:
 - discovery endpoint: http://keycloak:8080/realms/selfsuflab/.well-known/openid-configuration
 - clientID: KCmattermost01
 - client secret: paste it
